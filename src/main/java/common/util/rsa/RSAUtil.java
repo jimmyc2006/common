@@ -115,4 +115,16 @@ public class RSAUtil {
         RSAPrivateKey privateKey = getRSAPrivateKey(privateKeyFileName);
         return decrypt(privateKey, srcBytes);
     }
+    
+    public static void main(String[] args) throws Exception {
+        Key publicKey = getRSAPublicKey("public_key");
+        Key privateKey = getRSAPrivateKey("private_key");
+        byte[][] result = new byte[1000000][];
+        long startTime = System.currentTimeMillis();
+        for(int i = 0; i < 1000000; i++) {
+            String content = "一" + i;
+            result[i] = encrypt(publicKey, content.getBytes("utf-8"));
+            System.out.println(result[i].length);
+        }
+    }
 }
