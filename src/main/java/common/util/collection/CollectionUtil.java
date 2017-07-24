@@ -1,5 +1,6 @@
 package common.util.collection;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -15,6 +16,21 @@ public class CollectionUtil {
      */
     public static Long[] Set2Array(Set<Long> source) {
         Long[] result = source.toArray(new Long[]{});
+        return result;
+    }
+    
+    /**
+     * 将Set<X>类型转化为Set<Y>类型
+     * @param src
+     * @param changer
+     * @return
+     */
+    public static <X, Y> Set<Y> set2set (Set<X> src, Changer<X, Y> changer) {
+        Set<Y> result = new HashSet<>(src.size());
+        for(X x : src) {
+            Y y = changer.change(x);
+            result.add(y);
+        }
         return result;
     }
 }
