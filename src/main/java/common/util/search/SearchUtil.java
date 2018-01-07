@@ -153,7 +153,7 @@ public class SearchUtil {
         }
     }
     public static void main(String[] args) {
-        //List<FileSearchResult> result =  SearchUtil.search("D:/test", "aaa", "txt", true, null, false);
-        //System.out.println(result);
+        // List<FileSearchResult> result =  SearchUtil.search("D:/test", "aaa", "txt", true, null, false);
+        // System.out.println(result);
     }
 }
